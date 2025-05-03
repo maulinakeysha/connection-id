@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="style.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <title>Connection ID</title>
+</head>
+<body>
+    <!-- Bagian Header -->
+    <header>
+        <div class="header-content">
+            <nav>
+                <ul>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="about_us.html">About Us</a></li>
+                </ul>
+            </nav>
+            <img src="media/logo.png" alt="Logo" class="logo">
+        </div>
+    </header>
+
+    <!-- Bagian Main -->
+    <main>
+        <div class="left-side">
+            <!-- Border -->
+            <div class="border"></div>
+            <!-- Foto Frame -->
+            <div class="photo-frame">
+                <img src="media/3.jpg" alt="Image">
+            </div>
+        </div>
+
+        <!-- Sisi Kanan untuk Teks -->
+        <div class="right-side">
+            <h1>CONNECTION</h1>
+            <h2>Moments of Us!</h2>
+            <div class="button-index">
+                <button class="playlist-button">
+                    <a href="https://open.spotify.com/playlist/3Sw3fNrFOBRbFV6W3Yhdqm?si=4I09dCnlSiGzaXYqdv0MuA&pi=a-4IdKwdY3RHaZ">
+                        Our Playlist
+                    </a>
+                </button>
+                <button class="songs-button" id="mute-button">
+                    <i class="fas fa-volume-up"></i> Zayn - Stardust
+                </button>
+            </div>
+            <div class="gallery-section">
+                <span class="gallery-title">Gallery</span>
+                <span class="see-all-photos"><a href="gallery.html">See all photos</a></span>
+            </div>
+            <div class="photo-frames">
+                <div class="frame">
+                    <img src="media/1.jpg" alt="Image">
+                </div>
+                <div class="frame">
+                    <img src="media/2.jpg" alt="Image">
+                </div>
+                <div class="frame">
+                    <img src="media/4.jpg" alt="Image">
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Audio player yang akan diputar otomatis -->
+    <audio id="background-music" src="media/song.mp3" autoplay loop></audio>
+
+    <!-- JavaScript untuk kontrol mute/unmute pada tombol songs-button -->
+    <script>
+        const music = document.getElementById('background-music');
+        const muteButton = document.getElementById('mute-button');
+
+        // Fungsi toggle untuk mute/unmute
+        muteButton.addEventListener('click', (e) => {
+            e.preventDefault(); // Mencegah link default
+            if (music.muted) {
+                music.muted = false;
+                muteButton.innerHTML = '<i class="fas fa-volume-up"></i> Zayn - Stardust';
+            } else {
+                music.muted = true;
+                muteButton.innerHTML = '<i class="fas fa-volume-mute"></i> Zayn - Stardust';
+            }
+        });
+    </script>
+</body>
+</html>

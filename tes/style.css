@@ -1,0 +1,623 @@
+
+/* Styling untuk body */
+body {
+    margin: 0;
+    height: 100vh; /* Full height */
+    background: linear-gradient(to bottom, rgba(235, 210, 160, 0.7) 20%, #FFFFFF 80%); 
+    font-family: 'Montserrat', sans-serif; /* Ganti font ke Montserrat */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow:hidden;
+}
+
+body.dua{
+    overflow-y: auto; /* Scroll vertikal hanya di halaman gallery */
+    height: auto; /* Pastikan konten bisa di-scroll */
+    flex-direction: column;
+}
+
+
+/* Styling untuk header */
+header {
+    position:absolute;
+    top: 30px;
+    left: 0;
+    right: 0;
+    width: 100%;
+    padding: 20px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    z-index: 10;
+}
+
+/* Container untuk navbar dan logo */
+.header-content {
+    display: flex;
+    justify-content: flex-end; /* Menyusun item dengan jarak antara navbar dan logo */
+    align-items: center;
+    width: 100%;
+    padding: 0 20;
+}
+
+/* Styling untuk navbar */
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    margin-left: 20px;
+}
+
+nav ul li {
+    margin-left: 20px; /* Mengatur jarak antar menu, tambahkan margin kiri supaya lebih seimbang */
+    padding-right: 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #1c1a18;
+    font-size: 18px;
+    font-weight: 1000;
+    margin-right: 20px;
+}
+
+nav ul li a:hover{
+    color: #876F5B;
+}
+
+/* Styling untuk logo */
+.logo {
+    width: 50px;
+    height: auto;
+    margin-right: 100px;
+}
+
+/* Bagian utama dengan dua sisi */
+main {
+    display: flex; /* Menggunakan flexbox untuk menyusun bagian kiri dan kanan */
+    justify-content: space-between; /* Mengatur jarak antar sisi kiri dan kanan */
+    align-items: center;
+    width: 80%; /* Sesuaikan lebar area utama */
+    height: 100%; /* Sesuaikan tinggi */
+}
+
+/* Bagian kiri untuk foto */
+.left-side {
+    width: 40%;
+    height: 100%;
+    max-width: 450px;
+    overflow: hidden; /* Agar gambar tidak keluar dari border */
+    position: relative;
+
+}
+
+/* Border */
+.border {
+    width: 90%;
+    height: 80%;
+    position: absolute;
+    margin-top: 100px;
+    left: 0;
+    border: 5px solid #7F5F4B; /* Warna coklat untuk border */
+    border-radius: 500px 500px 0 0; /* Membuat bagian atas border melengkung */
+    z-index: 1; /* Agar border berada di belakang frame */
+}
+
+/* Foto frame */
+.photo-frame {
+    width: 100%;
+    height: 80%;
+    position: absolute;
+    top: 15%; /* Geser foto frame sedikit ke bawah */
+    left: 10%; /* Geser foto frame sedikit ke kanan */
+    border-radius: 500px 500px 0 0; /* Membuat bagian atas foto frame melengkung */
+    z-index: 2; /* Agar foto frame berada di depan border */
+    overflow: hidden;
+}
+
+/* Styling untuk gambar dalam frame */
+.photo-frame img {
+    width: 90%;
+    height: 100%;
+    object-fit: cover; /* Menjaga proporsi gambar agar tidak terdistorsi */
+    border-radius: 500px 500px 0 0; /* Memberikan efek melengkung pada gambar sesuai dengan foto frame */
+    position: absolute;
+}
+
+/* Bagian kanan untuk teks */
+/* Bagian kanan untuk teks */
+.right-side {
+    margin-top: 300px;
+    width: 45%;
+    height: 100%;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Styling untuk judul pertama (Connection) */
+.right-side h1 {
+    color: #333;
+    font-size: 30px;
+    margin: 0;
+}
+
+/* Styling untuk judul kedua (Moments of Us) */
+.right-side h2 {
+    color: #333;
+    font-size: 120px;
+    margin: 0;
+}
+
+/* Styling untuk container button */
+.button-index {
+    display: flex;
+    gap: 20px; /* Jarak antar tombol */
+    margin-top: 20px; /* Jarak dari teks */
+    
+}
+
+/* Styling untuk button "Our Playlist" */
+.playlist-button {
+    background-color: #876F5B; /* Warna background button */
+    border: 2px solid #876F5B; /* Border button */
+    color: white; /* Warna teks button */
+    font-size: 16px;
+    padding: 10px 30px; /* Padding dalam button */
+    cursor: pointer;
+    transition: background-color 0.3s ease; /* Animasi saat hover */
+    border-radius: 8px;
+}
+
+.playlist-button a {
+    color: white; /* Warna coklat untuk link */
+    text-decoration: none; /* Menghilangkan garis bawah */
+    font-size: 16px;
+    font-weight: bold;
+}
+
+/* Styling untuk button "Lagu" */
+.songs-button {
+    background-color: transparent; /* Background transparan */
+    border: 2px solid #876F5B; /* Border button */
+    color: #876F5B; /* Warna teks button */
+    font-size: 16px;
+    padding: 10px 30px; /* Padding dalam button */
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: border-color 0.3s ease; /* Animasi saat hover */
+    border-radius: 8px;
+}
+
+/* Icon play */
+.songs-button i {
+    font-size: 18px; /* Ukuran icon play */
+}
+
+.songs-button a {
+    color: #876F5B; /* Warna coklat untuk link */
+    text-decoration: none; /* Menghilangkan garis bawah */
+    font-size: 16px;
+    font-weight: bold;
+}
+
+/* Hover effect untuk tombol */
+.playlist-button:hover {
+    background-color: #B68C6D; /* Warna saat hover */
+}
+
+.songs-button:hover {
+    border-color: #B68C6D; /* Warna border saat hover */
+    color: #B68C6D; /* Warna teks saat hover */
+}
+
+.songs-button:hover i {
+    color: #B68C6D; /* Warna icon saat hover */
+}
+
+.gallery-section {
+    display: flex;
+    justify-content: space-between; /* Agar tulisan gallery kiri dan kanan sejajar */
+    align-items: center;
+    margin-top: 30px; /* Jarak ke bawah dari tombol */
+}
+
+.gallery-title, .see-all-photos {
+    font-size: 20px;
+    color: #1c1a18; /* Warna coklat */
+    font-weight: 600;
+}
+
+
+/* Styling untuk See All Photos */
+.see-all-photos {
+    font-size: 20px;
+    color: #1c1a18;
+    font-weight: 600;
+    cursor: pointer;
+    text-decoration: underline;
+    margin-left: auto;
+}
+
+.see-all-photos a {
+    color: #1c1a18; /* Warna coklat untuk link */
+    text-decoration: none; /* Menghilangkan garis bawah */
+    font-size: 20px;
+    font-weight: bold;
+}
+
+/* Styling untuk Kotak Frame */
+.photo-frames {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px; /* Jarak antara gallery title dan frames */
+}
+
+
+.frame {
+    width: 40%; /* Setiap kotak memiliki lebar 20% */
+    height: 120px; /* Tinggi kotak */
+    border: 2px solid #7F5F4B; /* Warna coklat border */
+    border-radius: 10px; /* Sedikit melengkung di sudut */
+    margin-right: 10px; /* Jarak antar kotak */
+    overflow: hidden; /* Agar gambar tidak keluar dari frame */
+}
+
+.frame img {
+    width: 100%; /* Mengatur lebar gambar agar sesuai dengan lebar frame */
+    height: 100%; /* Mengatur tinggi gambar agar sesuai dengan tinggi frame */
+    object-fit: cover; /* Memastikan gambar menutupi seluruh area frame */
+}
+
+/* Styling untuk menghilangkan margin pada frame terakhir */
+.photo-frames .frame:last-child {
+    margin-right: 0;
+}
+
+/* Styling untuk menghilangkan margin pada frame terakhir */
+.photo-frames .frame:last-child {
+    margin-right: 0;
+}
+
+/* Styling untuk container Moments */
+.moments-container {
+    position: absolute; /* Gunakan absolute positioning */
+    top: 200px; /* Jarak dari atas halaman */
+    left: 50%; /* Mengatur posisi dari kiri */
+    transform: translateX(-50%); /* Memindahkan elemen ke tengah secara horizontal */
+    text-align: center; /* Pastikan teksnya rata tengah */
+}
+
+/* Styling untuk teks Moments */
+.moments-title {
+    font-size: 40px; /* Ukuran font bisa disesuaikan */
+    color: #1c1a18; /* Sesuaikan warna dengan tema */
+    font-weight: bolder;
+    margin-bottom: 25px;
+}
+
+/* Styling untuk gallery */
+.photo-gallery {
+    display: flex;
+    justify-content: space-between; /* Untuk kasih jarak antar kiri dan kanan */
+    gap: 20px; /* Jarak antar kolom */
+    margin-top: 300px;
+    margin-bottom: 200px;
+    position: relative;
+    width: 100%;
+}
+
+.gallery-left, .gallery-right {
+    width: 50%; /* Lebar kolom kiri dan kanan, 48% supaya ada space */
+    display: flex;
+    flex-direction: column; /* Foto ditata secara vertikal */
+    gap: 20px; /* Jarak antar foto */
+}
+
+img {
+    width: 100%; /* Gambar memenuhi lebar kolom */
+    height: auto; /* Menjaga proporsi gambar */
+    border-radius: 10px; /* Biar gambar ada sudut rounded */
+}
+
+.connection-text {
+    text-align: center;
+    font-size: 40px;
+    font-style: italic;
+    color: #1c1a18;
+    font-weight: 500;
+    position: absolute;
+    bottom: -1000px; /* Ganti dengan nilai yang lebih kecil untuk posisi lebih tinggi */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    z-index: 10; /* Pastikan teks tetap di atas gambar */
+}
+
+/* Styling untuk footer */
+.footer {
+    background: #e2b391;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+    width: 100%;
+}
+
+/* Kontak (Instagram, Email, Domain) */
+.footer-contact {
+    margin-bottom: 20px;
+}
+
+.footer-link {
+    margin: 0 15px;
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    transition: color 0.3s ease;
+}
+
+.footer-link:hover {
+    color: #4c340e; /* Warna saat hover */
+}
+
+/* Styling untuk logo dengan garis tebal di kanan dan kiri */
+.footer-logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0;
+}
+
+.line {
+    height: 4px;
+    width: 600px;
+    background-color: rgb(88, 56, 0);
+    margin: 0 10px;
+}
+
+.logo-image {
+    max-width: 120px;
+    height: auto;
+}
+
+/* Styling untuk copyright */
+.footer-copyright {
+    margin-top: 20px;
+    font-size: 14px;
+}
+
+.about-container {
+    position: absolute; /* Gunakan absolute positioning */
+    top: 200px; /* Jarak dari atas halaman */
+    left: 50%; /* Mengatur posisi dari kiri */
+    transform: translateX(-50%); /* Memindahkan elemen ke tengah secara horizontal */
+    text-align: center; /* Pastikan teksnya rata tengah */
+}
+
+/* Styling untuk teks Moments */
+.about-title {
+    font-size: 40px; /* Ukuran font bisa disesuaikan */
+    color: #1c1a18; /* Sesuaikan warna dengan tema */
+    font-weight: bolder;
+    margin-bottom: 25px;
+}
+
+/* Styling untuk bagian About Us */
+.about-us-details {
+    display: flex; /* Menggunakan Flexbox untuk menyusun gambar dan teks berdampingan */
+    align-items: center; /* Menyusun gambar dan teks agar rata tengah secara vertikal */
+    margin-top: 350px; /* Memberikan jarak dari bagian atas, lebih kecil dari 400px sebelumnya */
+    width: calc(100% - 400px); /* Mengurangi lebar 400px (200px kiri dan 200px kanan) dari total lebar halaman */
+    justify-content: space-between;
+    margin-left: 200px; /* Jarak 200px dari kiri */
+    margin-right: 200px; /* Jarak 200px dari kanan */
+}
+
+.logo-left {
+    flex: 1; /* Memberikan ruang yang cukup untuk gambar */
+    padding-right: 20px; /* Jarak antara gambar dan teks */
+}
+
+.description-right {
+    flex: 2; /* Memberikan ruang lebih besar untuk teks */
+    font-size: 20px; /* Ukuran font untuk teks */
+    line-height: 1.6; /* Memberikan jarak antar baris teks */
+    text-align: center;
+}
+
+.logo-left img {
+    width: 250px; /* Ukuran gambar yang pas */
+    height: auto;
+}
+
+/* CSS untuk bagian product-info */
+.product-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 150px; /* Jarak dari bagian atas */
+    width: calc(100% - 400px); /* Mengurangi lebar 400px dari total lebar halaman */
+    margin-left: 200px; /* Jarak dari sisi kiri */
+    margin-right: 200px; /* Jarak dari sisi kanan */
+}
+
+.product-text {
+    flex: 2;
+    font-size: 18px; /* Ukuran font untuk teks */
+    line-height: 1.6; /* Jarak antar baris */
+    padding-right: 20px; /* Jarak antar teks dan gambar */
+    text-align: center;
+}
+
+.product-image {
+    flex: 1;
+    text-align: right;
+}
+
+.product-image img {
+    width: 250px; /* Ukuran gambar produk */
+    height: auto;
+}
+
+/* Styling untuk bagian Build Your Own */
+.order {
+    text-align: center;
+    margin-top: 100px; /* Jarak dari bagian sebelumnya */
+    font-size: 20px; /* Ukuran font untuk judul */
+}
+
+.order h2 {
+    font-weight: 600;
+    color: #333; /* Warna teks Build Your Own */
+    letter-spacing: 0.15em;
+}
+
+.order h3 a{
+    display: inline-flex;
+    align-items: center;
+    margin-top: 10px; /* Jarak antara teks dan ikon */
+    font-size: 25px; /* Ukuran font untuk link Instagram */
+    color: #4c340e;
+    text-decoration: none;
+}
+
+.order h3 a:hover{
+    color: #876F5B
+}
+
+.instagram-link {
+    display: inline-flex;
+    align-items: center;
+    margin-top: 10px; /* Jarak antara teks dan ikon */
+    font-size: 25px; /* Ukuran font untuk link Instagram */
+    color: #4c340e;
+    text-decoration: none;
+}
+
+.instagram-link i {
+    font-size: 30px;
+    color: #4c340e; /* Warna ikon Instagram */
+    margin-right: 8px; /* Jarak antara ikon dan teks */
+}
+
+.instagram-link:hover {
+    color: #4c340e; /* Warna link saat di-hover */
+}
+
+
+.love-text {
+    margin-top: 150px;
+    font-size: 25px;
+    color: #333;
+    letter-spacing: 0.15em;
+    text-align: center;
+}
+
+.connector-text {
+    margin-top: 5px;
+    font-size: 40px;
+    color: #333;
+    letter-spacing: 0.15em;
+    text-align: center;
+}
+
+/* Background warna coklat */
+.foto-show-body {
+    background-color: #3E2723; /* Coklat tua */
+    font-family: 'Montserrat', sans-serif;
+    color: white;
+    margin: 0;
+    padding: 0;
+}
+
+/* Container untuk menampilkan foto */
+.photo-container {
+    position: relative;
+    text-align: center;
+    max-width: 100%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Gambar yang ditampilkan */
+.photo-display {
+    max-width: 90%;
+    max-height: 80%;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+/* Tombol Next dan Previous */
+.foto-show-btn{
+    position: fixed; /* Agar tetap berada di halaman */
+    background-color: transparent;
+    border: none;
+    color: #3E2723;
+    font-size: 3em; /* Membesarkan ukuran tombol */
+    cursor: pointer;
+    padding: 10px;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: all 0.3s ease;
+}
+
+.foto-show-btn:hover{
+    color: #B68C6D;
+}
+
+/* Tombol Previous di kiri, 50px dari sisi kiri halaman */
+.prev {
+    left: 50px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+/* Tombol Next di kanan, 50px dari sisi kanan halaman */
+.next {
+    right: 50px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+/* Menambahkan teks di bawah tombol */
+.btn-text {
+    margin-top: 5px;
+    font-size: 20px;
+    color:#3E2723;
+}
+
+/* Tombol Close (X) */
+.close-btn {
+    position: fixed;
+    right: 50px; /* 50px dari kanan halaman */
+    top: 20px;
+    background-color: transparent;
+    border: none;
+    color: #3E2723;
+    font-size: 2.5em;
+    cursor: pointer;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.close-btn:hover{
+    color: #876F5B;
+}
+
+/* Teks "Exit" di bawah tombol Close */
+.close-btn .btn-text {
+    font-size: 20px;
+    margin-top: 5px;
+}

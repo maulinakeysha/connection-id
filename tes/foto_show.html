@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="style.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <title>Connection ID | Photo Show</title>
+</head>
+<body class="foto-show-body">
+    <div class="photo-container">
+        <!-- Menampilkan foto -->
+        <img id="photo" src="" alt="Photo" class="photo-display">
+
+        <!-- Tombol untuk menutup foto -->
+        <button class="foto-show-btn close-btn" onclick="closePhoto()">X</button>
+        
+        <!-- Tombol untuk Previous -->
+        <button class="foto-show-btn prev" onclick="changePhoto(-1)">
+            &#10094;
+            <span class="btn-text">Previous</span>
+        </button>
+
+        <!-- Tombol untuk Next -->
+        <button class="foto-show-btn next" onclick="changePhoto(1)">
+            &#10095;
+            <span class="btn-text">Next</span>
+        </button>
+    </div>
+
+    <script>
+        // Daftar gambar
+        const photos = [
+            "media/1.jpg",
+            "media/2.jpg",
+            "media/3.jpg",
+            "media/4.jpg"
+        ];
+
+        // Mengambil parameter 'photo' dari URL
+        const urlParams = new URLSearchParams(window.location.search);
+        let currentIndex = parseInt(urlParams.get('photo')) - 1; // Menyesuaikan dengan indeks array (mulai dari 0)
+
+        // Fungsi untuk mengubah gambar
+        function changePhoto(direction) {
+            currentIndex += direction;
+            
+            if (currentIndex >= photos.length) {
+                currentIndex = 0;
+            } else if (currentIndex < 0) {
+                currentIndex = photos.length - 1;
+            }
+
+            // Mengubah gambar yang ditampilkan
+            document.getElementById("photo").src = photos[currentIndex];
+        }
+
+        // Menampilkan foto yang sesuai dengan indeks awal
+        document.getElementById("photo").src = photos[currentIndex];
+
+        // Fungsi untuk menutup halaman foto
+        function closePhoto() {
+            window.history.back(); // Kembali ke halaman sebelumnya
+        }
+    </script>
+</body>
+</html>
